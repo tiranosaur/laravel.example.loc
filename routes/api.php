@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', 'MainController@index');
+Route::get('/registration', 'MainController@registration');
+Route::get('/verification', 'MainController@verification');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
