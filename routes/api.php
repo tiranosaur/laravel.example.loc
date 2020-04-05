@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/', 'MainController@index')->name('main.index');
+Route::get('/delete', 'MainController@delete')->name('main.delete');
+
+Route::get('/add', 'MainController@addRolePermission');
+
+Route::get('/role', 'RbacController@getRole');
+
+Route::post('/role', 'RbacController@createRole');
+Route::post('/roleAddPermission', 'RbacController@roleAddPermission');
+Route::post('/userAddPermission', 'RbacController@userAddPermission');
+Route::post('/userAddRole', 'RbacController@userAddRole');
