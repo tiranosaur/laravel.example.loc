@@ -86,4 +86,7 @@ return [
         'table' => 'failed_jobs',
     ],
 
+    'queues' => [
+        'myTestWorker' => 'myTestWorker'
+    ]
 ];
