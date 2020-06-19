@@ -58,6 +58,18 @@
                 text-transform: uppercase;
             }
 
+            .button {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                border: 1px solid #636b6f;
+                border-radius: 5px;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
