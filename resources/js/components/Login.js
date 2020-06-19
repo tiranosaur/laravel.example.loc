@@ -1,6 +1,7 @@
 import React from 'react';
 import Cookies from 'universal-cookie';
 import {createBrowserHistory} from "history";
+import {Link} from "react-router-dom"
 
 const cookies = new Cookies();
 
@@ -13,7 +14,6 @@ class Login extends React.Component {
         this.onChange = this.onChange.bind(this);
         this.clickSignIn = this.clickSignIn.bind(this);
         this.clickSignOut = this.clickSignOut.bind(this);
-        this.clickSignUp = this.clickSignUp.bind(this);
     }
 
     onChange(event) {
@@ -38,6 +38,7 @@ class Login extends React.Component {
     }
 
     clickSignIn() {
+        event.preventDefault();
         if (this.state.username === 'sdf' && this.state.password === 'sdf') {
             this.setState({access_token: "ready to use", username: "tiranosaur"});
 
@@ -54,13 +55,6 @@ class Login extends React.Component {
         cookies.remove('access_token');
         cookies.remove('username');
         this.render();
-    }
-
-    clickSignUp() {
-        //href to null
-        event.preventDefault();
-        //redirect
-        createBrowserHistory().push("/signup");
     }
 
     getLogin() {
@@ -81,8 +75,8 @@ class Login extends React.Component {
                     <input type="text" id={'password'} name={'password'} placeholder={'Password'}
                            onChange={this.onChange}/>
                     <div>
-                        <a href="#" className={'button'} onClick={this.clickSignIn}>SignIn</a>
-                        <a href="#" className={'button'} onClick={this.clickSignUp}>SignUp</a>
+                        <Link className={"button"} to={'#'} onClick={this.clickSignIn}>SignIn</Link>
+                        <Link className={"button"} to={'/signup'}>SignUp</Link>
                     </div>
                 </div>
             )
