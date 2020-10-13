@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {    return view('welcome');});
+Route::get('/broker/add', 'BrokerController@add');
+Route::post('/broker/store', 'BrokerController@store');
+Route::get('/broker/get', 'BrokerController@get');
