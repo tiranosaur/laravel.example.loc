@@ -22,6 +22,15 @@ class BrokerController extends Controller
 
     public function store(Request $request)
     {
+        /*
+         * 0 - общие брокеры
+         * 1 - mt_brokers
+         * 2 - cfd_gold_brokers
+         * 3 - ecn_brokers
+         * 4 - oil_brokers
+         * 5 - institutional_brokers
+         * 6 - swap_brokers
+         */
         $data = $request->toArray();
         if ($request->file('img')) {
             $filename    = $request->img->getClientOriginalName();  //$request->img->hashName();
