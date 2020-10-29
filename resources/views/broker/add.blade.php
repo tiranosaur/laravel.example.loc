@@ -9,6 +9,15 @@
 </head>
 <body>
 <h1>Add broker page</h1>
+<ul>
+    <li>0 - общие брокеры</li>
+    <li>1 - mt_brokers</li>
+    <li>2 - cfd_gold_brokers</li>
+    <li>3 - ecn_brokers</li>
+    <li>4 - oil_brokers</li>
+    <li>5 - institutional_brokers</li>
+    <li>6 - swap_brokers</li>
+</ul>
 <form action="/broker/store" method="post" id="store_broker" enctype="multipart/form-data">
     @csrf
     <p><label for="name">broker name</label> <input type="text" id="name" name="name"></p>
