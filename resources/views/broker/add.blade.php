@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>Add broker page</h1>
+<xmp> (^[^a-zA-Z0-9]*)(\S*)([\s]*$)    =>         <li>$2</li></xmp>
 <ul>
     <li>0 - общие брокеры</li>
     <li>1 - mt_brokers</li>
